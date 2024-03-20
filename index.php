@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP cor</title>
+    <title>Document</title>
+
+    <style>
+        label{
+            font-size: 18px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: fit-content;
+        }
+    </style>
 </head>
 <body>
-    <form actions="<?php echo var_dump($_SERVER['PHP_SELF']);?>" method="get">
-        <label for="">Informe a cor</label>
-        <input type="text" name="cor">
-        <input type="submit">
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
+        <label for="inicio"> Digite o valor inicial </label>
+        <input name="inicio" type="number"><br>
+        <label for="final"> Digite o valor final </label>
+        <input name="final" type="number"><br>
+        <button type="submit">Enviar</button>
     </form>
+    <?php
+    $inicio = $_GET["inicio"];
+    $final = $_GET["final"];
 
-<?php
-    
-        $cor = $_GET["cor"];
-
-        if ($cor == "amarelo"){
-            echo "O preço do jogo é R$50,00";
-        }
-        elseif ($cor == "azul"){
-            echo "O preço do jogo é R$100,00";
-        }
-        elseif ($cor == "branco"){
-            echo "O preço do jogo é R$150,00";
-        }
-        else {
-            echo "Cor inválida";
-        }
-    
+    for ($inicio; $inicio != $final ; $inicio++) {
+        echo "$inicio <br>";
+    }
     ?>
 </body>
 </html>
