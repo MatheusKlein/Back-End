@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>variável</title>
-    <style type="text/css">
-        body {
-            background-color: #a7bacc;
-        }
-        h1 {
-            padding: 10px;
-            color: #0f2336;
-        }
-        p {
-            font-size: 18px; 
-            margin: 5px;
-        }
-</style>
+    <title>PHP cor</title>
 </head>
 <body>
-    <h1>Sobre mim</h1>
-    <?php
-    $nome = "Matheus";
-    const SOBRENOME = "Klein";
-    $idade = 16 ;
-    $altura = 1.64 ;
-    $peso = 50 ;
-    echo "<p>Meu nome é $nome " . SOBRENOME. "</p>" ;
-    echo "<p>Tenho $idade anos, minha altura é $altura e peso $peso kg.</p>"
-        ?>
+    <form actions="<?php echo var_dump($_SERVER['PHP_SELF']);?>" method="get">
+        <label for="">Informe a cor</label>
+        <input type="text" name="cor">
+        <input type="submit">
+    </form>
+
+<?php
     
+        $cor = $_GET["cor"];
+
+        if ($cor == "amarelo"){
+            echo "O preço do jogo é R$50,00";
+        }
+        elseif ($cor == "azul"){
+            echo "O preço do jogo é R$100,00";
+        }
+        elseif ($cor == "branco"){
+            echo "O preço do jogo é R$150,00";
+        }
+        else {
+            echo "Cor inválida";
+        }
+    
+    ?>
 </body>
 </html>
